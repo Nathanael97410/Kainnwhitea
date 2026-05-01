@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kain N. White</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --rouge: #c0392b;
+  --rouge-sombre: #8b0000;
+  --or: #c9a84c;
+  --fond: #f2e8d5;
+  --fond-carte: #f8f1e4;
+  --bordure: #d8c7aa;
+  --texte: #1d1d1d;
+  --texte-doux: #4a3a2a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--fond);
+  font-family: 'EB Garamond', serif;
+  color: var(--texte);
+}
+
+/* ─── HEADER ─── */
+header {
+  height: 420px;
+  background: url('5cba5e53-7ab6-4326-9632-8e37782c3a73.png') center 30%/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.header-content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.header-content h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 58px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(192,57,43,0.8), 2px 2px 8px rgba(0,0,0,0.9);
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.header-content .subtitle {
+  font-size: 20px;
+  font-style: italic;
+  color: #e8d5b0;
+  text-shadow: 1px 1px 6px black;
+  letter-spacing: 1px;
+}
+
+.header-content .titre-rouge {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+/* ─── LAYOUT ─── */
+.container {
+  width: 1200px;
+  max-width: 95%;
+  margin: 40px auto 60px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* ─── ARTICLE ─── */
+.article {
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.quote {
+  border-left: 4px solid var(--rouge-sombre);
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-style: italic;
+  color: #3a2a20;
+  background: rgba(139,0,0,0.04);
+  border-radius: 0 8px 8px 0;
+}
+
+.warning {
+  background: #efe2be;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid #d4be87;
+  font-size: 15px;
+  color: var(--texte-doux);
+}
+
+/* ─── SOMMAIRE ─── */
+.summary {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+.summary h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--rouge-sombre);
+  border-bottom: 1px solid #e0d0b8;
+  padding-bottom: 8px;
+}
+
+.summary ol {
+  padding-left: 20px;
+}
+
+.summary li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.summary a {
+  color: var(--rouge-sombre);
+  text-decoration: none;
+}
+
+.summary a:hover {
+  text-decoration: underline;
+}
+
+/* ─── SECTIONS ─── */
+.section {
+  margin-bottom: 50px;
+  scroll-margin-top: 20px;
+}
+
+.section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  border-bottom: 2px solid var(--or);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #1a1008;
+}
+
+.section p {
+  line-height: 1.9;
+  font-size: 18px;
+  color: var(--texte-doux);
+  margin-bottom: 14px;
+}
+
+/* Image de scène dans le texte */
+.scene-img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 24px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  border: 1px solid var(--bordure);
+  display: block;
+}
+
+.dropcap::first-letter {
+  float: left;
+  font-size: 58px;
+  line-height: 0.78;
+  margin-right: 8px;
+  color: var(--rouge-sombre);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+}
+
+/* Capacités */
+.capacite-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-left: 4px solid var(--rouge-sombre);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+}
+
+.capacite-item strong {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--rouge-sombre);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.capacite-item p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Relations */
+.relation-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 14px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.relation-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  background: var(--rouge-sombre);
+  padding: 3px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.relation-tag.or { background: #8a6e30; }
+.relation-tag.neutre { background: #555; }
+
+.relation-text strong {
+  font-size: 17px;
+  display: block;
+  margin-bottom: 4px;
+  color: #1a1008;
+}
+
+.relation-text p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.character-card {
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+}
+
+.card-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 380px;
+  background: #111;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card-image-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.info {
+  padding: 20px;
+}
+
+.card-name {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  text-align: center;
+  color: var(--rouge-sombre);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.info-box {
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e8ddd0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.info-box span {
+  font-weight: 600;
+  color: var(--rouge-sombre);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.statut-vivant {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-content">
+    <div class="titre-rouge">— Personnage Secondaire —</div>
+    <h1>Kain N. White</h1>
+    <p class="subtitle">"Peu importe combien de fois tu me tues, je reviendrai."</p>
+  </div>
+</header>
+
+<!-- CONTENU PRINCIPAL -->
+<div class="container">
+
+  <!-- ARTICLE GAUCHE -->
+  <div class="article">
+
+    <div class="quote">
+      "Il avance encore."
+    </div>
+
+    <div class="warning">
+      ⚠️ Cette page contient des informations importantes concernant Kain N. White, personnage secondaire affilié à Killian.
+    </div>
+
+    <!-- SOMMAIRE -->
+    <div class="summary">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#apparence">Apparence</a></li>
+        <li><a href="#personnalite">Personnalité</a></li>
+        <li><a href="#histoire">Histoire</a></li>
+        <li><a href="#capacites">Capacités</a></li>
+        <li><a href="#relations">Relations</a></li>
+      </ol>
+    </div>
+
+    <!-- APPARENCE -->
+    <div class="section" id="apparence">
+      <h2>Apparence</h2>
+
+      <p class="dropcap">Kain N. White impose une présence immédiate, non pas par une agressivité affichée, mais par l'impression de contrôle absolu qu'il dégage. Sa silhouette est grande et puissamment musclée — une musculature dense et marquée, forgée par des années de combat brutal et d'endurance extrême, sans recherche esthétique. Chacun de ses mouvements reste précis, calme et calculé.</p>
+
+      <p>Son visage est fin et presque froid, avec des traits droits et harmonieux qui contrastent violemment avec l'aura dangereuse qu'il dégage. Son regard doré, perçant et constamment sérieux, donne l'impression qu'il analyse en permanence tout ce qui l'entoure sans jamais se détendre. Même immobile, ses yeux semblent vivants et attentifs. Il affiche rarement des émotions visibles, ce qui rend son expression naturellement distante.</p>
+
+      <p>Ses cheveux argentés sont longs et légèrement désordonnés. Plusieurs mèches tombent librement autour de son visage tandis qu'une longue tresse descend sur son épaule droite, retenue par un anneau doré. Malgré leur apparence sauvage, ses cheveux restent entretenus, renforçant ce mélange étrange entre élégance et brutalité qui définit toute son apparence.</p>
+
+      <img src="Gemini_Generated_Image_usnrdqusnrdqusnr.png" class="scene-img" alt="Kain — vue alternative">
+
+      <p>Kain porte une chemise rouge sombre légèrement entrouverte au niveau du torse, révélant sa poitrine ainsi que plusieurs accessoires : une épaisse chaîne dorée et un choker métallique autour du cou. La couleur rouge attire immédiatement l'attention et contraste avec sa tenue principalement noire. Les bordures dorées sur ses épaules renforcent une allure presque aristocratique.</p>
+
+      <p>Sur ses épaules repose un immense manteau noir recouvert de longues plumes épaisses rappelant les ailes d'un corbeau. Ce manteau confère à sa silhouette une ampleur impressionnante et accentue son apparence menaçante. Vu de loin, on pourrait croire qu'une ombre vivante l'accompagne constamment.</p>
+
+      <p>Ses avant-bras sont protégés par des bandages clairs serrés, et il porte des gants sans doigts noirs. Son poing, souvent fermé, laisse ressentir une tension permanente, comme s'il était toujours prêt à frapper. Pantalon noir ajusté, ceinture sobre, chaussures noires impeccables : ses vêtements élégants contrastent avec cet aspect combattant brut.</p>
+    </div>
+
+    <!-- PERSONNALITÉ -->
+    <div class="section" id="personnalite">
+      <h2>Personnalité</h2>
+
+      <p class="dropcap">Kain est tout sauf froid ou distant. C'est l'un des personnages les plus expressifs et les plus chaleureux de l'équipage — il sourit facilement, rit franchement, et ne cache jamais ce qu'il ressent. Ses émotions sont à fleur de peau, visibles sur son visage à chaque instant, que ce soit la joie d'un bon combat, la fierté pour un camarade ou la colère face à l'injustice.</p>
+
+      <p>Il adore le combat — pas par soif de sang, mais pour le défi, l'adrénaline, et la sensation de se dépasser. Il entre dans une bagarre avec un large sourire et en ressort souvent plus enthousiaste qu'il n'y est entré. Cette passion pour l'affrontement physique n'a rien de sombre : c'est une expression pure de sa vitalité.</p>
+
+      <p>Kain est fondamentalement bon. Il cherche en permanence à aider ceux qui l'entourent, à protéger les plus faibles, à soutenir ses alliés. Ce n'est pas une posture héroïque calculée — c'est sa nature profonde. Il s'intègre naturellement partout, s'entend avec tout l'équipage, et sait autant faire rire que rassurer.</p>
+
+      <p>En tant que Second, il incarne l'âme de l'équipe : le lien humain entre les individus, le moteur qui pousse tout le monde à aller plus loin. Et quand vient l'heure du combat, ce sourire ne disparaît pas — il s'intensifie.</p>
+    </div>
+
+    <!-- HISTOIRE -->
+    <div class="section" id="histoire">
+      <h2>Histoire</h2>
+
+      <img src="a967e003-9533-426f-8041-d1f0d92a1a3a.png" class="scene-img" alt="Kain — scène panoramique">
+
+      <p class="dropcap">À seulement 22 ans, Kain N. White occupe déjà le rang de Second — une position qu'il n'a pas obtenue par la ruse ou la politique, mais par la force brute de sa volonté et son dévouement sans faille envers ceux qui l'entourent. Plus jeune, il aurait pu choisir mille chemins. Il a choisi celui du combat et de la protection.</p>
+
+      <p>Kain s'entraîne jour et nuit, sans relâche, repoussant constamment ses propres limites. Il ne se contente pas d'atteindre un plateau — il le brise, puis recommence. Ses bandages ne sont pas que des équipements de combat : ils sont le témoignage silencieux d'un homme qui a poussé son corps aux extrêmes encore et encore, et qui recommencera demain.</p>
+
+      <p>Son intégration dans l'équipage a été naturelle, presque évidente. Sa chaleur, son énergie et son sourire permanent ont rapidement fait de lui un pilier humain du groupe — celui autour duquel les autres gravitent sans s'en rendre compte.</p>
+
+      <p>Sa devise, <em>"peu importe combien de fois tu me tues, je reviendrai"</em>, n'est pas une promesse sombre — c'est la déclaration joyeuse d'un homme qui refuse catégoriquement d'abandonner, que ce soit dans l'entraînement, le combat ou la vie.</p>
+    </div>
+
+    <!-- CAPACITÉS -->
+    <div class="section" id="capacites">
+      <h2>Capacités</h2>
+
+      <div class="capacite-item">
+        <strong>Endurance Surhumaine</strong>
+        <p>Kain supporte des niveaux de douleur et de dommages physiques qui seraient fatals pour n'importe qui d'autre. Sa résistance semble aller au-delà du biologique.</p>
+      </div>
+
+      <div class="capacite-item">
+        <strong>Régénération / Retour</strong>
+        <p>Même après une mort apparente, Kain revient. La mécanique précise de cette capacité reste inconnue — don, malédiction ou autre chose entièrement.</p>
+      </div>
+
+      <div class="capacite-item">
+        <strong>Combat Rapproché</strong>
+        <p>Son style est brutal, direct et terriblement efficace. Ses bandages et gants sans doigts suggèrent un combattant habitué aux corps-à-corps intenses et prolongés.</p>
+      </div>
+
+      <div class="capacite-item">
+        <strong>Présence Galvanisante</strong>
+        <p>Sans effort conscient, Kain remonte le moral de ceux qui l'entourent. Son énergie, son sourire et son enthousiasme sont contagieux — il tire les autres vers le haut simplement en étant là.</p>
+      </div>
+    </div>
+
+    <!-- RELATIONS -->
+    <div class="section" id="relations">
+      <h2>Relations</h2>
+
+      <div class="relation-item">
+        <div class="relation-tag or">Second</div>
+        <div class="relation-text">
+          <strong>L'Équipage</strong>
+          <p>Kain s'entend avec absolument tout le monde à bord. Sa nature ouverte et chaleureuse fait de lui le lien humain naturel du groupe — celui que tout le monde apprécie et vers qui l'on se tourne spontanément.</p>
+        </div>
+      </div>
+
+      <div class="relation-item">
+        <div class="relation-tag">Protecteur</div>
+        <div class="relation-text">
+          <strong>Les plus vulnérables</strong>
+          <p>Kain ressent une obligation profonde de protéger ceux qui ne peuvent pas se défendre seuls. Ce n'est pas une règle qu'il s'impose — c'est un réflexe instinctif, ancré au plus profond de sa personnalité.</p>
+        </div>
+      </div>
+
+      <div class="relation-item">
+        <div class="relation-tag neutre">Rivaux</div>
+        <div class="relation-text">
+          <strong>Adversaires au combat</strong>
+          <p>Kain ne nourrit aucune haine envers ses adversaires. Il les affronte avec un sourire sincère, respectant quiconque lui donne un vrai combat. Une fois la bataille terminée, la rancune n'existe pas pour lui.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- fin article -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="character-card">
+
+      <div class="card-image-wrap">
+        <img src="fa1e07ab-1c6a-45e1-97fe-ba13482db442__1_.png" alt="Kain N. White">
+      </div>
+
+      <div class="info">
+        <div class="card-name">Kain N. White</div>
+
+        <div class="info-box">
+          <span>Nom complet</span>
+          Kain N. White
+        </div>
+        <div class="info-box">
+          <span>Âge</span>
+          22 ans
+        </div>
+        <div class="info-box">
+          <span>Cheveux</span>
+          Argentés — longs, tresse droite
+        </div>
+        <div class="info-box">
+          <span>Yeux</span>
+          Dorés, perçants
+        </div>
+        <div class="info-box">
+          <span>Tenue signature</span>
+          Chemise rouge, manteau de plumes noires
+        </div>
+        <div class="info-box">
+          <span>Rang</span>
+          Second
+        </div>
+        <div class="info-box">
+          <span>Affiliation</span>
+          L'Équipage
+        </div>
+        <div class="info-box">
+          <span>Statut</span>
+          <span class="statut-vivant">✦ Vivant</span>
+        </div>
+        <div class="info-box">
+          <span>Particularité</span>
+          Revient après la mort
+        </div>
+      </div>
+
+    </div>
+  </div><!-- fin sidebar -->
+
+</div><!-- fin container -->
+
+</body>
+</html>
